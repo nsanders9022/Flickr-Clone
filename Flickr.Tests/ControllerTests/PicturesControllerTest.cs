@@ -29,5 +29,19 @@ namespace Flickr.Tests.ControllerTests
             //Assert
             Assert.IsType<ViewResult>(result);
         }
+
+        [Fact]
+        public async void Get_ModelList_Index_Test()
+        {
+            PicturesController controller = new PicturesController(_userManager, _db);
+            var actionResult = await controller.Index();
+            var indexView = await controller.Index() as ViewResult;
+
+            //Act
+            var result = indexView.ViewData.Model;
+
+            //Assert
+            Assert.IsType<List<Picture>>(result);
+        }
     }
 }

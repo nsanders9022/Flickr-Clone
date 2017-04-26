@@ -13,6 +13,7 @@ namespace Flickr.Controllers
     [Authorize]
     public class PicturesController : Controller
     {
+
         private readonly FlickrDbContext _db;
         private readonly UserManager<FlickrUser> _userManager;
 
