@@ -28,5 +28,35 @@ namespace Flickr.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index", "Pictures");
         }
+
+        public IActionResult Edit(int id)
+        {
+            ViewBag.PictureId = new SelectList(_db.Pictures, "PictureId", "Caption");
+            var thisComment = _db.Comments.FirstOrDefault(comments => comments.CommentId == id);
+            return View(thisComment);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Comment comment)
+        {
+            _db.Entry(comment).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index", "Pictures");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var thisComment = _db.Comments.FirstOrDefault(comments => comments.CommentId == id);
+            return View(thisComment);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var thisComment = _db.Comments.FirstOrDefault(comments => comments.CommentId == id);
+            _db.Comments.Remove(thisComment);
+            _db.SaveChanges();
+            return RedirectToAction("Index","Pictures");
+        }
     }
 }

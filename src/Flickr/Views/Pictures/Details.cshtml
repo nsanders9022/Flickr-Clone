@@ -16,7 +16,11 @@
     {
         @foreach (var comment in Model.Comments)
         {
-            <li>@comment.Description</li>
+            <li>
+                <h5>@comment.Description</h5>
+                <p>@Html.ActionLink("Edit", "Edit", "Comments", new { id = comment.CommentId })</p>
+                <p>@Html.ActionLink("Delete", "Delete", "Comments", new { id = comment.CommentId })</p>
+            </li>
 
         }
     }
