@@ -10,3 +10,6 @@
 * As a user I want to view all of the pictures I am tagged in.
 * As a user I want to have a favorites page.
 * As a user I want to add, edit, and delete comments on images.
+
+
+https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/testing
