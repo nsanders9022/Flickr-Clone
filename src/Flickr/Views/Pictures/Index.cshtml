@@ -17,7 +17,7 @@
             <div class="col-sm-4">
                 <img src="@Html.DisplayFor(modelPicture => listPicture.Url)" />
                 <br />
-                <p>@Html.DisplayFor(modelPicture => listPicture.Caption) | @Html.ActionLink("Edit", "Edit", new { id = listPicture.PictureId })</p>
+                <p>@Html.DisplayFor(modelPicture => listPicture.Caption) | @Html.ActionLink("Edit", "Edit", new { id = listPicture.PictureId }) | @Html.ActionLink("Delete", "Delete", new { id = listPicture.PictureId })</p>
             </div>
         }
     </div>

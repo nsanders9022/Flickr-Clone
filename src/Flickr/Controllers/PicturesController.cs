@@ -59,5 +59,20 @@ namespace Flickr.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(int id)
+        {
+            var thisPicture = _db.Pictures.FirstOrDefault(pictures => pictures.PictureId == id);
+            return View(thisPicture);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var thisPicture = _db.Pictures.FirstOrDefault(pictures => pictures.PictureId == id);
+            _db.Pictures.Remove(thisPicture);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
