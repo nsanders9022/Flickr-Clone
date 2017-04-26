@@ -9,3 +9,17 @@
 .pull-right {
     padding-right: 20px;
 }
+
+.index-picture {
+    width: 97%;
+    border: solid 3px pink;
+    
+}
+
+.col-sm-4 {
+    min-height: 300px;
+}
+
+.text {
+    color: red;
+}

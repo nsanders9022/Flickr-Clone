@@ -11,11 +11,11 @@
 
 @if (Model.Any())
 {
-    <div>
+    <div class="row">
         @foreach (var listPicture in Model)
         {
             <div class="col-sm-4">
-                <img src="@Html.DisplayFor(modelPicture => listPicture.Url)" />
+                <img class="index-picture" src="@Html.DisplayFor(modelPicture => listPicture.Url)" />
                 <br />
                 <p>@Html.DisplayFor(modelPicture => listPicture.Caption) | @Html.ActionLink("Edit", "Edit", new { id = listPicture.PictureId }) | @Html.ActionLink("Delete", "Delete", new { id = listPicture.PictureId })</p>
             </div>
