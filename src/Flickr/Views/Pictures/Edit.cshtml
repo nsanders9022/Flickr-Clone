@@ -1,0 +1,25 @@
+﻿@model Flickr.Models.Picture
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Edit</h2>
+<hr />
+<h4>Edit this picture: @Html.DisplayFor(model => model.Caption)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.PictureId)
+
+    @Html.LabelFor(model => model.Url)
+    @Html.EditorFor(model => model.Url)
+
+    @Html.LabelFor(model => model.Caption)
+    @Html.EditorFor(model => model.Caption)
+
+    <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Flickr.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace Flickr.Controllers
 {
@@ -41,6 +42,20 @@ namespace Flickr.Controllers
             var currentUser = await _userManager.FindByIdAsync(userId);
             picture.User = currentUser;
             _db.Pictures.Add(picture);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var thisPicture = _db.Pictures.FirstOrDefault(pictures => pictures.PictureId == id);
+            return View(thisPicture);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Picture picture)
+        {
+            _db.Entry(picture).State = EntityState.Modified;
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
