@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Flickr.Models.Picture
+
+<img src="@Html.DisplayFor(model => model.Url)" />
+<br />
+<br />
+
+ <h2>@Html.DisplayFor(model => model.Caption)</h2>
+
+@if(Model.Comments.Count != 0)
+{
+    @foreach (var comment in Model.Comments)
+    {
+        <p>@comment.Description</p>
+
+    }
+}
+else
+{
+    <p>There are no comments on this picture yet!</p>
+
+}
+
+<p>@Html.ActionLink("Leave a new comment", "Create", "Comments")</p>
+
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

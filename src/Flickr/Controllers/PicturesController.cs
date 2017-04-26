@@ -30,6 +30,12 @@ namespace Flickr.Controllers
             return View(_db.Pictures.Where(x => x.User.Id == currentUser.Id));
         }
 
+        public IActionResult Details(int id)
+        {
+            var thisPicture = _db.Pictures.Include(pictures => pictures.Comments).FirstOrDefault(pictures => pictures.PictureId == id);
+            return View(thisPicture);
+        }
+
         public IActionResult Create()
         {
             return View();

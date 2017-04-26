@@ -205,12 +205,16 @@
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Program.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Startup.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Controllers\AccountController.cs
+C:\Users\epicodus\Desktop\Flickr\src\Flickr\Controllers\CommentsController.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Controllers\PicturesController.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Migrations\20170426162943_Initial.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Migrations\20170426162943_Initial.Designer.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Migrations\20170426172617_PicturesTable.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Migrations\20170426172617_PicturesTable.Designer.cs
+C:\Users\epicodus\Desktop\Flickr\src\Flickr\Migrations\20170426220939_AddComments.cs
+C:\Users\epicodus\Desktop\Flickr\src\Flickr\Migrations\20170426220939_AddComments.Designer.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Migrations\FlickrDbContextModelSnapshot.cs
+C:\Users\epicodus\Desktop\Flickr\src\Flickr\Models\Comment.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Models\FlickrDbContext.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Models\FlickrUser.cs
 C:\Users\epicodus\Desktop\Flickr\src\Flickr\Models\Picture.cs

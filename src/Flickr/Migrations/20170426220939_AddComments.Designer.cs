@@ -8,9 +8,10 @@ using Flickr.Models;
 namespace Flickr.Migrations
 {
     [DbContext(typeof(FlickrDbContext))]
-    partial class FlickrDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170426220939_AddComments")]
+    partial class AddComments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
