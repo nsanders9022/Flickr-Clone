@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Flickr.Models.PictureTag
+
+<h2>Add a tag to a picture</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    <label>Picture</label>
+    @Html.DropDownList("PictureId")
+
+    <label>Tag</label>
+    @Html.DropDownList("TagId")
+
+    <input type="submit" value="Create" />
+}
+
+@Html.ActionLink("Back to List", "Index")
