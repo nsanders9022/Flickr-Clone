@@ -7,16 +7,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Flickr.Models
 {
-    [Table("Pictures")]
-    public class Picture
+    [Table("Tags")]
+    public class Tag
     {
         [Key]
-        public int PictureId { get; set; }
-        public string Url { get; set; }
-        public string Caption { get; set; }
-        public virtual FlickrUser User { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
+        public int TagId { get; set; }
+        public string Word { get; set; }
         public ICollection<PictureTag> PicturesTags { get; set; }
-
     }
 }

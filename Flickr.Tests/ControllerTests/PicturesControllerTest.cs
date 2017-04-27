@@ -30,6 +30,22 @@ namespace Flickr.Tests.ControllerTests
             Assert.IsType<ViewResult>(result);
         }
 
+        //[Fact]
+//public async Task Get_ViewResult_Index_Test()
+//{
+//    //Make Mock Database
+//    var contextOptions = new DbContextOptionsBuilder()
+//    .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=YOUR_MOCK_DATABASE_NAME;integrated security=True")
+//    .Options;
+//    var _db = new ApplicationDbContext(contextOptions);
+//    //Arrange
+//    var controller = new ThingsController(_db);
+//    //Act
+//    var result = await controller.Index();
+//    //Assert
+//    Assert.IsType<ViewResult>(result);
+//}
+
         [Fact]
         public async void Get_ModelList_Index_Test()
         {
@@ -45,3 +61,5 @@ namespace Flickr.Tests.ControllerTests
         }
     }
 }
+
+

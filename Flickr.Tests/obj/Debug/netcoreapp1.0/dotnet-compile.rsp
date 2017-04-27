@@ -1,5 +1,5 @@
---temp-output:C:\Users\epicodus\Desktop\Flickr\Flickr.Tests\obj\Debug\netcoreapp1.0\
---out:C:\Users\epicodus\Desktop\Flickr\Flickr.Tests\bin\Debug\netcoreapp1.0\Flickr.Tests.dll
+--temp-output:C:\Users\epicodus\Desktop\Flickr-Clone\Flickr.Tests\obj\Debug\netcoreapp1.0\
+--out:C:\Users\epicodus\Desktop\Flickr-Clone\Flickr.Tests\bin\Debug\netcoreapp1.0\Flickr.Tests.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -196,7 +196,7 @@
 --reference:C:\Users\epicodus\.nuget\packages\xunit.extensibility.execution\2.1.0\lib\dotnet\xunit.execution.dotnet.dll
 --reference:C:\Users\epicodus\.nuget\packages\xunit.runner.reporters\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.reporters.dotnet.dll
 --reference:C:\Users\epicodus\.nuget\packages\xunit.runner.utility\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.utility.dotnet.dll
---reference:C:\Users\epicodus\Desktop\Flickr\src\Flickr\bin\Debug\netcoreapp1.0\Flickr.dll
-C:\Users\epicodus\Desktop\Flickr\Flickr.Tests\ControllerTests\PicturesControllerTest.cs
-C:\Users\epicodus\Desktop\Flickr\Flickr.Tests\ModelTests\PictureTest.cs
-C:\Users\epicodus\Desktop\Flickr\Flickr.Tests\Properties\AssemblyInfo.cs
+--reference:C:\Users\epicodus\Desktop\Flickr-Clone\src\Flickr\bin\Debug\netcoreapp1.0\Flickr.dll
+C:\Users\epicodus\Desktop\Flickr-Clone\Flickr.Tests\ControllerTests\PicturesControllerTest.cs
+C:\Users\epicodus\Desktop\Flickr-Clone\Flickr.Tests\ModelTests\PictureTest.cs
+C:\Users\epicodus\Desktop\Flickr-Clone\Flickr.Tests\Properties\AssemblyInfo.cs

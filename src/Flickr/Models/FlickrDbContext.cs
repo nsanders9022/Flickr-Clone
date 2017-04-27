@@ -15,6 +15,8 @@ namespace Flickr.Models
 
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<PictureTag> PicturesTags { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Flickr;integrated security=True");
@@ -25,10 +27,23 @@ namespace Flickr.Models
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<PictureTag>()
+                .HasKey(t => new { t.PictureId, t.TagId });
+
+            builder.Entity<PictureTag>()
+                .HasOne(pt => pt.Picture)
+                .WithMany(p => p.PicturesTags)
+                .HasForeignKey(pt => pt.PictureId);
+
+            builder.Entity<PictureTag>()
+               .HasOne(pt => pt.Tag)
+               .WithMany(p => p.PicturesTags)
+               .HasForeignKey(pt => pt.TagId);
             base.OnModelCreating(builder);
+
         }
 
 
-        
+
     }
 }
