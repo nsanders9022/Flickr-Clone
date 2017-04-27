@@ -12,6 +12,8 @@
 {
     <p>Hello @User.Identity.Name!</p>
     <p>@Html.ActionLink("View your pictures", "Index", "Pictures")</p>
+    <p>@Html.ActionLink("View your tags", "Index", "Tags")</p>
+
     @using (Html.BeginForm("LogOff", "Account"))
     {
         <input type="submit" class="btn btn-default" value="Log out" />

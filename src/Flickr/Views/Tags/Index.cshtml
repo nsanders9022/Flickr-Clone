@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Flickr.Models.Tag>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using System.Security.Claims
+
+<h2>Here are your tags, @User.Identity.Name</h2>
+
+@if (Model.Any())
+{
+    <div class="row">
+        @foreach (var listTag in Model)
+        {
+            
+                <p>@Html.ActionLink((string)listTag.Word, "Details", new { id = listTag.TagId }) | @Html.ActionLink("Edit", "Edit", new { id = listTag.TagId }) | @Html.ActionLink("Delete", "Delete", new { id = listTag.TagId })</p>
+            
+        }
+    </div>
+}
+else
+{
+    <p>No tags have been added yet!</p>
+}
+
+<hr />
+
+@Html.ActionLink("Add tag to picture", "Create", "PicturesTags")

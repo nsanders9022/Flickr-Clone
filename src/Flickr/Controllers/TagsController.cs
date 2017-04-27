@@ -13,7 +13,11 @@ namespace Flickr.Controllers
     public class TagsController : Controller
     {
         private FlickrDbContext _db = new FlickrDbContext();
-        // GET: /<controller>/
+        public IActionResult Index()
+        {
+            return View(_db.Tags.ToList());
+        }
+
         public IActionResult Create()
         {
             ViewBag.PictureId = new SelectList(_db.Pictures, "PictureId", "Caption");
@@ -24,7 +28,7 @@ namespace Flickr.Controllers
         {
             _db.Tags.Add(tag);
             _db.SaveChanges();
-            return RedirectToAction("Index", "Pictures");
+            return RedirectToAction("Index");
         }
 
         public IActionResult Edit(int id)
@@ -39,7 +43,7 @@ namespace Flickr.Controllers
         {
             _db.Entry(tag).State = EntityState.Modified;
             _db.SaveChanges();
-            return RedirectToAction("Index", "Pictures");
+            return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int id)
@@ -54,7 +58,7 @@ namespace Flickr.Controllers
             var thisTag = _db.Tags.FirstOrDefault(tags => tags.TagId == id);
             _db.Tags.Remove(thisTag);
             _db.SaveChanges();
-            return RedirectToAction("Index", "Pictures");
+            return RedirectToAction("Index");
         }
     }
 }
