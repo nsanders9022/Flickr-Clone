@@ -15,6 +15,10 @@ namespace Flickr.Controllers
         private FlickrDbContext _db = new FlickrDbContext();
         public IActionResult Index()
         {
+            ViewBag.Picture = _db.Tags
+               .Include(tag => tag.PicturesTags)
+               .ThenInclude(picturesTags => picturesTags.Picture);
+               //.Where(tag => tag.TagId == id).ToList();
             return View(_db.Tags.ToList());
         }
 
