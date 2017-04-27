@@ -13,10 +13,12 @@
 <h3>Tags:</h3>
 @if (Model.PicturesTags.Count != 0)
 {
-    <p>There should be a tag here</p>
+ 
     @foreach (var pictureTags in Model.PicturesTags)
     {
         <p>@pictureTags.Tag.Word</p>
+        <p> @Html.ActionLink("Edit", "Edit", "Tags", new { id = pictureTags.TagId })</p>
+            <p>@Html.ActionLink("Delete", "Delete", "Tags", new { id = pictureTags.TagId })</p>
     }
 }
 else
@@ -48,6 +50,6 @@ else
 </ol>
 
 <p>@Html.ActionLink("Leave a new comment", "Create", "Comments")</p>
-
+<p>@Html.ActionLink("Leave a new tag", "Create", "Tags")</p>
 
 <p>@Html.ActionLink("Back to list", "Index")</p>

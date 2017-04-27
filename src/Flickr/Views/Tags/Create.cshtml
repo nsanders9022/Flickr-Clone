@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Flickr.Models.Tag
+
+<h2>Add a new tag</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Word)
+    @Html.EditorFor(model => model.Word)
+
+    <input type="submit" value="Create" />
+}
+
+@Html.ActionLink("Back to List", "Index")

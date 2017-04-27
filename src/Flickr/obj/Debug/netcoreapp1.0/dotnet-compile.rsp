@@ -207,6 +207,7 @@ C:\Users\epicodus\Desktop\Flickr-Clone\src\Flickr\Startup.cs
 C:\Users\epicodus\Desktop\Flickr-Clone\src\Flickr\Controllers\AccountController.cs
 C:\Users\epicodus\Desktop\Flickr-Clone\src\Flickr\Controllers\CommentsController.cs
 C:\Users\epicodus\Desktop\Flickr-Clone\src\Flickr\Controllers\PicturesController.cs
+C:\Users\epicodus\Desktop\Flickr-Clone\src\Flickr\Controllers\TagsController.cs
 C:\Users\epicodus\Desktop\Flickr-Clone\src\Flickr\Migrations\20170426162943_Initial.cs
 C:\Users\epicodus\Desktop\Flickr-Clone\src\Flickr\Migrations\20170426162943_Initial.Designer.cs
 C:\Users\epicodus\Desktop\Flickr-Clone\src\Flickr\Migrations\20170426172617_PicturesTable.cs

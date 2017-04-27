@@ -1,0 +1,26 @@
+﻿@model Flickr.Models.Tag
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Edit</h2>
+<hr />
+<h4>Edit this comment: @Html.DisplayFor(model => model.Word)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TagId)
+    @*@Html.HiddenFor(model => model.PictureId)*@
+
+    @Html.LabelFor(model => model.Word)
+    @Html.EditorFor(model => model.Word)
+
+    @*@Html.LabelFor(model => model.PictureId)
+    @Html.DropDownList("PictureId")*@
+
+    <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to list", "Index", "Pictures")</p>
