@@ -17,17 +17,11 @@ namespace Flickr.Controllers
 
         private readonly FlickrDbContext _db;
         private readonly UserManager<FlickrUser> _userManager;
-        private FlickrDbContext _db1;
 
         public PicturesController (UserManager<FlickrUser> userManager, FlickrDbContext db)
         {
             _userManager = userManager;
             _db = db;
-        }
-
-        public PicturesController(FlickrDbContext _db1)
-        {
-            this._db1 = _db1;
         }
 
         public async Task<IActionResult> Index()
@@ -40,6 +34,11 @@ namespace Flickr.Controllers
         public IActionResult Details(int id)
         {
             var thisPicture = _db.Pictures.Include(pictures => pictures.Comments).FirstOrDefault(pictures => pictures.PictureId == id);
+            ViewBag.Tag = _db.Pictures
+                .Include(picture => picture.PicturesTags)
+                .ThenInclude(picturesTags => picturesTags.Tag)
+                .Where(picture => picture.PictureId == id).ToList();
+
             return View(thisPicture);
         }
 
