@@ -17,7 +17,7 @@
     @foreach (var pictureTags in Model.PicturesTags)
     {
         <p>@pictureTags.Tag.Word</p>
-        <p> @Html.ActionLink("Edit", "Edit", "Tags", new { id = pictureTags.TagId })</p>
+        <p> @Html.ActionLink("Edit", "Edit", "Tags", new { id = pictureTags.TagId }, new { picId = pictureTags.PictureId })</p>
             <p>@Html.ActionLink("Delete", "Delete", "Tags", new { id = pictureTags.TagId })</p>
     }
 }
@@ -52,4 +52,5 @@ else
 <p>@Html.ActionLink("Leave a new comment", "Create", "Comments")</p>
 <p>@Html.ActionLink("Leave a new tag", "Create", "Tags")</p>
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Back to my list", "Index")</p>
+<p>@Html.ActionLink("Back to the list of all pictures", "AllPictures")</p>

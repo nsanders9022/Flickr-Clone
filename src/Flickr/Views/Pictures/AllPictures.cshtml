@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Flickr.Models.Picture>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using System.Security.Claims
+
+<h2>Here are your pictures, @User.Identity.Name</h2>
+
+@if (Model.Any())
+{
+    <div class="row">
+        @foreach (var listPicture in Model)
+        {
+            <div class="col-sm-4">
+                <img class="index-picture" src="@Html.DisplayFor(modelPicture => listPicture.Url)" />
+                <br />
+                <p>@Html.ActionLink((string)listPicture.Caption, "Details", new { id = listPicture.PictureId })</p>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No pictures have been added yet!</p>
+}
+
+<hr />
+@Html.ActionLink("Create new", "Create")
+
+@Html.ActionLink("Add tag to picture", "Create", "PicturesTags")

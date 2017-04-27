@@ -35,18 +35,20 @@ namespace Flickr.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int id, int picId)
         {
             ViewBag.TagId = new SelectList(_db.Tags, "PictureId", "Caption");
+            ViewBag.PicId = picId;
             var thisTag = _db.Tags.FirstOrDefault(tags => tags.TagId == id);
             return View(thisTag);
         }
 
         [HttpPost]
-        public IActionResult Edit(Tag tag)
+        public IActionResult Edit(Tag tag, int picId)
         {
             _db.Entry(tag).State = EntityState.Modified;
             _db.SaveChanges();
+            var pictureId = picId;
             return RedirectToAction("Index");
         }
 

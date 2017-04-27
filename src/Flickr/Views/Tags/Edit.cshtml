@@ -13,7 +13,8 @@
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.TagId)
-    @*@Html.HiddenFor(model => model.PictureId)*@
+
+    @Html.Hidden("picId", (int) ViewBag.PicId)
 
     @Html.LabelFor(model => model.Word)
     @Html.EditorFor(model => model.Word)
